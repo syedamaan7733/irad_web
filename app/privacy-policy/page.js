@@ -18,7 +18,7 @@ export default function PrivacyPolicy() {
           
           <h2 className="text-2xl font-semibold mt-8 mb-4 text-navy-deep">1. Introduction</h2>
           <p className="mb-4">
-            Welcome to iRad Solutions ("we," "our," or "us"). We respect your privacy and are committed to protecting your personal data. 
+            Welcome to iRad Solutions (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). We respect your privacy and are committed to protecting your personal data. 
             This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.
           </p>
 

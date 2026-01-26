@@ -18,7 +18,7 @@ export default function Contact() {
     e.preventDefault();
     // Handle form submission
     console.log('Form submitted:', formData);
-    alert('Thank you for your interest! We\'ll get back to you soon.');
+    alert('Thank you for your interest! We&apos;ll get back to you soon.');
     setFormData({ name: '', email: '', company: '', message: '' });
   };
 
@@ -41,10 +41,10 @@ export default function Contact() {
         >
           {/* Left: Text Content */}
           <motion.div className={styles.textContent} variants={fadeInUp}>
-            <h2>Let's Build Something Amazing</h2>
+            <h2>Let&apos;s Build Something Amazing</h2>
             <p className="text-large">
               Ready to transform your business with custom digital solutions? 
-              Get in touch and let's discuss your project.
+              Get in touch and let&apos;s discuss your project.
             </p>
 
             <div className={styles.features}>

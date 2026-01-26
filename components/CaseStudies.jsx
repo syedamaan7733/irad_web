@@ -22,7 +22,7 @@ const caseStudies = [
     company: 'GrowthLabs',
     industry: 'Marketing',
     title: 'Lead Generation Engine',
-    description: 'Developed an automated lead capture and nurturing system that transformed GrowthLabs\' customer acquisition process.',
+    description: 'Developed an automated lead capture and nurturing system that transformed GrowthLabs&apos; customer acquisition process.',
     metrics: [
       { icon: TrendingUp, value: '5X', label: 'Lead Volume' },
       { icon: Users, value: '2000+', label: 'Leads/Month' },
@@ -57,7 +57,7 @@ export default function CaseStudies() {
         >
           <motion.h2 variants={fadeInUp}>Proven Results</motion.h2>
           <motion.p className="text-large" variants={fadeInUp}>
-            Real projects, real impact. See how we've helped businesses transform.
+            Real projects, real impact. See how we&apos;ve helped businesses transform.
           </motion.p>
         </motion.div>
 
