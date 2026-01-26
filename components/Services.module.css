@@ -1,0 +1,115 @@
+.services {
+    background: white;
+}
+
+.header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--space-3xl);
+}
+
+.header h2 {
+    margin-bottom: var(--space-md);
+}
+
+.header p {
+    color: var(--color-navy-primary);
+    opacity: 0.9;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+}
+
+.card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: var(--card-padding);
+    border: 2px solid rgba(31, 38, 53, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover::before {
+    transform: scaleX(1);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-xl);
+}
+
+.iconWrapper {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--border-radius-sm);
+    background: linear-gradient(135deg, rgba(110, 231, 183, 0.1) 0%, rgba(110, 231, 183, 0.05) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-md);
+    color: var(--color-accent);
+}
+
+.card h4 {
+    margin-bottom: var(--space-sm);
+    color: var(--color-navy-deep);
+}
+
+.card p {
+    color: var(--color-navy-primary);
+    opacity: 0.8;
+    margin-bottom: var(--space-md);
+    line-height: 1.6;
+}
+
+.features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.features li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font: 600 14px/1.4 var(--font-family);
+    color: var(--color-navy-primary);
+}
+
+.checkmark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: white;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
