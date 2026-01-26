@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, Linkedin, Twitter, Github } from 'lucide-react';
+import { Mail, Linkedin, MapPin, Phone } from 'lucide-react';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -28,10 +28,12 @@ export default function Footer() {
   };
 
   const socials = [
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Mail, href: 'mailto:hello@irad.com', label: 'Email' }
+    { icon: Mail, href: 'mailto:iradwsas@gmail.com', label: 'Email' }
+  ];
+
+  const founders = [
+    { name: 'Iftekhar Ahmed', href: 'https://www.linkedin.com/in/iftekhar-ahmed-857606188/' },
+    { name: 'Syed Amaan Ali', href: 'https://www.linkedin.com/in/syed-amaan-ali-69399a173/' }
   ];
 
   return (
@@ -102,6 +104,28 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+
+          {/* Contact Info Column */}
+          <div className={styles.linkColumn}>
+            <h6>Contact</h6>
+            <div className={styles.contactInfo}>
+              <div className={styles.addressBlock}>
+                <MapPin size={16} />
+                <div>
+                  <p>Ambikapur, Surguja</p>
+                  <p>Chhattisgarh, 497001</p>
+                </div>
+              </div>
+              <div className={styles.emailBlock}>
+                <Phone size={16} />
+                <a href="mailto:iradwsas@gmail.com">+919238153364</a>
+              </div>
+              <div className={styles.emailBlock}>
+                <Mail size={16} />
+                <a href="mailto:iradwsas@gmail.com">iradwsas@gmail.com</a>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Bottom Bar */}
@@ -109,9 +133,23 @@ export default function Footer() {
           <p className={styles.copyright}>
             © {currentYear} iRad Solutions. All rights reserved.
           </p>
-          <p className={styles.credits}>
-            Crafted with precision and passion
-          </p>
+          <div className={styles.founders}>
+            <span>Managed by: </span>
+            {founders.map((founder, index) => (
+              <span key={founder.name}>
+                <a 
+                  href={founder.href} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={styles.founderLink}
+                >
+                  <Linkedin size={14} />
+                  {founder.name}
+                </a>
+                {index < founders.length - 1 && <span className={styles.separator}> • </span>}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </footer>

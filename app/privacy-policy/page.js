@@ -62,7 +62,9 @@ export default function PrivacyPolicy() {
           </p>
           <p>
             <strong>iRad Solutions</strong><br />
-            Email: contact@irad.com
+            Ambikapur, Surguja<br />
+            Chhattisgarh, 497001<br />
+            Email: iradwsas@gmail.com
           </p>
         </div>
       </div>
