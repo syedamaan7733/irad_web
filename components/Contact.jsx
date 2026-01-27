@@ -16,9 +16,29 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-    alert('Thank you for your interest! We&apos;ll get back to you soon.');
+    
+    // Format the message for WhatsApp
+    // const whatsappNumber = '919238153364'; // Adding country code for India
+    const whatsappNumber = '919109390639'; // Adding country code for India
+    let text = `Hi, my name is ${formData.name}.\n`;
+    
+    if (formData.email) {
+      text += `Email: ${formData.email}\n`;
+    }
+    
+    if (formData.company) {
+      text += `Enterprise Name: ${formData.company}\n`;
+    }
+    
+    text += `\nMessage:\n${formData.message}`;
+    
+    const encodedText = encodeURIComponent(text);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
+    
+    // Redirect to WhatsApp
+    window.open(whatsappUrl, '_blank');
+    
+    // Reset form
     setFormData({ name: '', email: '', company: '', message: '' });
   };
 
@@ -98,32 +118,31 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                placeholder="John Doe"
+                placeholder="Billu Katil 🔪"
               />
             </div>
 
             <div className={styles.formGroup}>
-              <label htmlFor="email">Email Address *</label>
+              <label htmlFor="email">Email Address</label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                required
-                placeholder="john@company.com"
+                placeholder="billukatil@gmail.com"
               />
             </div>
 
             <div className={styles.formGroup}>
-              <label htmlFor="company">Company Name</label>
+              <label htmlFor="company">Company Name/Organization Name/Enterprise Name</label>
               <input
                 type="text"
                 id="company"
                 name="company"
                 value={formData.company}
                 onChange={handleChange}
-                placeholder="Your Company Inc."
+                placeholder="Your Company Name/Organization Name...."
               />
             </div>
 

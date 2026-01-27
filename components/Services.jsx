@@ -14,9 +14,9 @@ const services = [
   },
   {
     icon: Wrench,
-    title: 'Internal Tools',
-    description: 'Powerful internal systems that streamline operations, automate workflows, and boost team productivity.',
-    features: ['Workflow Automation', 'Team Collaboration', 'Process Optimization']
+    title: 'Flow Management',
+    description: 'Optimize your business processes with visual flow management tools that streamline operations and reduce bottlenecks.',
+    features: ['Visual Flow Builder', 'Process Automation', 'Task Tracking']
   },
   {
     icon: Users,
@@ -32,9 +32,15 @@ const services = [
   },
   {
     icon: Package,
-    title: 'Product Solutions',
-    description: 'End-to-end product development from concept to launch, built with scalability and user experience in mind.',
-    features: ['MVP Development', 'Scalable Architecture', 'User-Centric Design']
+    title: 'WhatsApp Integration & Chatbots',
+    description: 'Connect with customers where they are. Automated chatbots and seamless WhatsApp integration for instant support.',
+    features: ['24/7 Availability', 'Instant Responses', 'Order Updates']
+  },
+  {
+    icon: Wrench, // Reusing icon for AI or find better if available but sticking to imports
+    title: 'AI & AI Implementation',
+    description: 'Leverage the power of Artificial Intelligence to automate complex tasks, predict trends, and personalize user experiences.',
+    features: ['Predictive Analytics', 'Natural Language Processing', 'Machine Learning Models']
   }
 ];
 

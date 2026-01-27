@@ -9,16 +9,16 @@ export default function Footer() {
 
   const links = {
     services: [
-      { name: 'Custom Dashboards', href: '#services' },
-      { name: 'Internal Tools', href: '#services' },
-      { name: 'Lead Generation', href: '#services' },
-      { name: 'Promotional Websites', href: '#services' }
+      { name: 'Custom Dashboards', href: '/#services' },
+      { name: 'Internal Tools', href: '/#services' },
+      { name: 'Lead Generation', href: '/#services' },
+      { name: 'Promotional Websites', href: '/#services' }
     ],
     company: [
-      { name: 'About Us', href: '#' },
-      { name: 'Case Studies', href: '#case-studies' },
-      { name: 'Pricing', href: '#pricing' },
-      { name: 'Contact', href: '#contact' }
+      { name: 'About Us', href: '/#' },
+      { name: 'Case Studies', href: '/#case-studies' },
+      { name: 'Pricing', href: '/#pricing' },
+      { name: 'Contact', href: '/#contact' }
     ],
     legal: [
       { name: 'Privacy Policy', href: '/privacy-policy' },
