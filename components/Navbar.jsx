@@ -28,23 +28,23 @@ export default function Navbar() {
   ];
 
   return (
-    <motion.nav 
+    <motion.nav
       className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}
       style={{ opacity: navOpacity }}
     >
       <div className={styles.container}>
         {/* Logo */}
-        <motion.a 
-          href="#" 
+        <motion.a
+          href="/"
           className={styles.logo}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <Image 
-            src="/irad_logo.jpeg" 
-            alt="iRad Logo" 
-            width={120} 
-            height={40} 
+          <Image
+            src="/irad_logo.jpeg"
+            alt="iRad Logo"
+            width={120}
+            height={40}
             className={styles.logoImage}
             style={{ objectFit: 'contain' }}
             priority
@@ -67,7 +67,7 @@ export default function Navbar() {
               <span className={styles.navUnderline}></span>
             </motion.a>
           ))}
-          
+
           <motion.a
             href="#contact"
             className="btn btn-primary"
@@ -82,7 +82,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu Button */}
-        <button 
+        <button
           className={styles.mobileMenuBtn}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
@@ -92,10 +92,10 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      <motion.div 
+      <motion.div
         className={styles.mobileMenu}
         initial={{ height: 0, opacity: 0 }}
-        animate={{ 
+        animate={{
           height: isMobileMenuOpen ? 'auto' : 0,
           opacity: isMobileMenuOpen ? 1 : 0
         }}

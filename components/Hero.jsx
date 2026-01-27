@@ -13,12 +13,15 @@ export default function Hero() {
 
   return (
     <section className={styles.hero}>
-      {/* Background Cream Circle with Parallax */}
-      <motion.div 
+      {/* Glassmorphism Background Layer */}
+      <div className={styles.glassLayer} />
+
+      {/* Clear Bubble (above glass layer) */}
+      <motion.div
         className={styles.creamCircle}
         style={{ y: y1, opacity }}
       />
-      
+
       {/* Animated pattern lines */}
       <div className={styles.patternLines}>
         {[...Array(8)].map((_, i) => (
@@ -27,7 +30,7 @@ export default function Hero() {
             className={styles.line}
             initial={{ scaleY: 0, opacity: 0 }}
             animate={{ scaleY: 1, opacity: 0.3 }}
-            transition={{ 
+            transition={{
               delay: i * 0.1,
               duration: 0.8,
               ease: [0.4, 0.0, 0.2, 1]
@@ -44,7 +47,7 @@ export default function Hero() {
             key={i}
             className={styles.particle}
             initial={{ opacity: 0 }}
-            animate={{ 
+            animate={{
               opacity: [0, 1, 0],
               y: [0, -100],
               x: [(Math.random() - 0.5) * 50, (Math.random() - 0.5) * 100]
@@ -64,7 +67,7 @@ export default function Hero() {
       </div>
 
       <div className="container">
-        <motion.div 
+        <motion.div
           className={styles.content}
           variants={staggerContainer}
           initial="hidden"
@@ -72,7 +75,7 @@ export default function Hero() {
           style={{ y: y2 }}
         >
           {/* Badge */}
-          <motion.div 
+          <motion.div
             className={styles.badge}
             variants={fadeInDown}
           >
@@ -81,7 +84,7 @@ export default function Hero() {
           </motion.div>
 
           {/* Main Headline */}
-          <motion.h1 
+          <motion.h1
             className={styles.headline}
             variants={fadeInUp}
           >
@@ -93,7 +96,7 @@ export default function Hero() {
           </motion.h1>
 
           {/* Subheadline */}
-          <motion.p 
+          <motion.p
             className={styles.subheadline}
             variants={fadeInUp}
           >
@@ -103,7 +106,7 @@ export default function Hero() {
           </motion.p>
 
           {/* CTAs */}
-          <motion.div 
+          <motion.div
             className={styles.ctaGroup}
             variants={fadeInUp}
           >
@@ -116,7 +119,7 @@ export default function Hero() {
               Request Demo
               <ArrowRight size={20} />
             </motion.a>
-            
+
             <motion.a
               href="#services"
               className="btn btn-secondary"
@@ -128,7 +131,7 @@ export default function Hero() {
           </motion.div>
 
           {/* Trust indicators */}
-          <motion.div 
+          <motion.div
             className={styles.trustBar}
             variants={fadeInUp}
           >
