@@ -1,0 +1,135 @@
+.page {
+  /* Clears the fixed navbar. No min-height: with a short project list a
+     forced full viewport just opens a dead gap above the footer. */
+  padding: calc(80px + var(--space-3xl)) 0 var(--space-3xl);
+  background: linear-gradient(180deg, #FBF6E6 0%, #F5EFD8 100%);
+}
+
+.header {
+  max-width: 60ch;
+  margin-bottom: var(--space-2xl);
+}
+
+.title {
+  font: var(--font-h2);
+  margin-bottom: var(--space-sm);
+}
+
+.intro {
+  font: var(--font-body-large);
+  color: rgba(15, 23, 36, 0.7);
+  margin: 0;
+}
+
+.grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-lg);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  color: var(--color-navy-deep);
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--timing-medium) var(--ease-smooth),
+    box-shadow var(--timing-medium) var(--ease-smooth);
+}
+
+.card:hover {
+  color: var(--color-navy-deep);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--color-navy-deep);
+  outline-offset: 3px;
+}
+
+.cardIdle,
+.cardIdle:hover {
+  transform: none;
+  box-shadow: var(--shadow-sm);
+  opacity: 0.72;
+}
+
+/* A band of the project's own colour, rather than a stock gradient. */
+.accent {
+  display: block;
+  height: 88px;
+  flex-shrink: 0;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: var(--space-md);
+}
+
+.platform {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: 600 12px/1 ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, monospace;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(15, 23, 36, 0.55);
+  margin-bottom: var(--space-sm);
+}
+
+.cardTitle {
+  font: var(--font-h5);
+  margin-bottom: 6px;
+}
+
+.cardTagline {
+  font: var(--font-small);
+  color: rgba(15, 23, 36, 0.7);
+  margin-bottom: var(--space-md);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: auto;
+  font: 600 15px/1 var(--font-family);
+  color: var(--color-navy-deep);
+}
+
+.card:hover .cta svg {
+  transform: translateX(4px);
+}
+
+.cta svg {
+  transition: transform var(--timing-fast) var(--ease-smooth);
+}
+
+.badge {
+  margin-top: auto;
+  align-self: flex-start;
+  font: 600 12px/1 var(--font-family);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 7px 12px;
+  color: rgba(15, 23, 36, 0.65);
+  background: rgba(15, 23, 36, 0.08);
+  border-radius: 999px;
+}
+
+@media (max-width: 900px) {
+  .page {
+    padding-top: calc(72px + var(--space-xl));
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

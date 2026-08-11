@@ -1,0 +1,146 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  background: rgba(15, 23, 36, 0.7);
+  backdrop-filter: blur(6px);
+}
+
+.dialog {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  padding: var(--space-xl);
+  background: var(--color-cream);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-xl);
+  text-align: center;
+}
+
+.dialog:focus {
+  outline: none;
+}
+
+.close {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  color: var(--color-navy-deep);
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background var(--timing-fast) var(--ease-smooth);
+}
+
+.close:hover {
+  background: rgba(15, 23, 36, 0.08);
+}
+
+.close:focus-visible {
+  outline: 2px solid var(--color-navy-deep);
+  outline-offset: 2px;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: var(--space-md);
+  color: var(--color-navy-deep);
+  background: var(--gradient-accent);
+  border-radius: 50%;
+}
+
+.title {
+  font: var(--font-h5);
+  margin-bottom: var(--space-sm);
+}
+
+/* Indeterminate: an <a download> gives no byte progress, so the bar signals
+   activity without implying a percentage we do not know. */
+.progress {
+  position: relative;
+  height: 4px;
+  margin-bottom: var(--space-md);
+  overflow: hidden;
+  background: rgba(15, 23, 36, 0.1);
+  border-radius: 999px;
+}
+
+.progressBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 40%;
+  background: var(--gradient-accent);
+  border-radius: 999px;
+  animation: slide 1.4s var(--ease-smooth) infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(250%);
+  }
+}
+
+.body p {
+  font: var(--font-body);
+  color: rgba(15, 23, 36, 0.75);
+  margin-bottom: var(--space-lg);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.actions :global(.btn) {
+  width: 100%;
+}
+
+.retry {
+  font: 600 14px/1.4 var(--font-family);
+  color: var(--color-navy-deep);
+  background: none;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.retry:hover {
+  color: rgba(15, 23, 36, 0.65);
+}
+
+.retry:focus-visible {
+  outline: 2px solid var(--color-navy-deep);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progressBar {
+    animation: none;
+    width: 100%;
+  }
+}

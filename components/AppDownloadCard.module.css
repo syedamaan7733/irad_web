@@ -1,0 +1,299 @@
+/* The navy slab on the cream page. Inverting the ground makes this the
+   primary object on the page, which is right: getting the app is the job. */
+.card {
+  position: relative;
+  background: var(--gradient-navy);
+  color: var(--color-cream);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-accent);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-2xl);
+  align-items: start;
+  padding: var(--space-xl);
+}
+
+.actions {
+  min-width: 0;
+}
+
+.heading {
+  font: var(--font-h4);
+  color: var(--color-cream);
+  margin-bottom: var(--space-md);
+}
+
+/* ---------- Download ---------- */
+.downloadButton {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 100%;
+  padding: 18px var(--space-md);
+  font: 600 17px/1 var(--font-family);
+  color: var(--color-navy-deep);
+  background: var(--gradient-accent);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: all var(--timing-fast) var(--ease-smooth);
+}
+
+.downloadButton:hover {
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+.downloadButton:active {
+  transform: translateY(0);
+}
+
+.downloadButton:focus-visible {
+  outline: 2px solid var(--color-cream);
+  outline-offset: 3px;
+}
+
+/* Size sits on the button itself, so a 105 MB download over mobile data is
+   never a surprise. */
+.downloadSize {
+  margin-left: auto;
+  font: 600 13px/1 ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, monospace;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: rgba(15, 23, 36, 0.16);
+}
+
+/* ---------- Share ---------- */
+.shareBlock {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid rgba(251, 246, 230, 0.14);
+}
+
+.blockLabel {
+  display: block;
+  font: 600 12px/1 var(--font-family);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(251, 246, 230, 0.55);
+  margin-bottom: var(--space-sm);
+}
+
+.toggle {
+  display: inline-flex;
+  padding: 4px;
+  background: rgba(15, 23, 36, 0.45);
+  border: 1px solid rgba(251, 246, 230, 0.14);
+  border-radius: 999px;
+}
+
+.toggleOption {
+  padding: 9px 18px;
+  font: 600 14px/1 var(--font-family);
+  color: rgba(251, 246, 230, 0.7);
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all var(--timing-fast) var(--ease-smooth);
+  white-space: nowrap;
+}
+
+.toggleOption:hover {
+  color: var(--color-cream);
+}
+
+.toggleOptionActive,
+.toggleOptionActive:hover {
+  color: var(--color-navy-deep);
+  background: var(--color-accent);
+}
+
+.toggleOption:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.hint {
+  font: var(--font-small);
+  color: rgba(251, 246, 230, 0.65);
+  margin: var(--space-sm) 0;
+}
+
+/* The exact string that Share, Copy link and the QR all carry. Showing it
+   means the toggle's effect is visible rather than something to trust. */
+.url {
+  width: 100%;
+  padding: 12px var(--space-sm);
+  font: 400 13px/1.4 ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, monospace;
+  color: rgba(251, 246, 230, 0.9);
+  background: rgba(15, 23, 36, 0.45);
+  border: 1px solid rgba(251, 246, 230, 0.14);
+  border-radius: var(--border-radius-sm);
+  text-overflow: ellipsis;
+}
+
+.url:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(110, 231, 183, 0.15);
+}
+
+.shareButtons {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.shareButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  flex: 1;
+  padding: 13px var(--space-sm);
+  font: 600 15px/1 var(--font-family);
+  color: var(--color-cream);
+  background: transparent;
+  border: 1px solid rgba(251, 246, 230, 0.3);
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: all var(--timing-fast) var(--ease-smooth);
+}
+
+.shareButton:hover:not(:disabled) {
+  color: var(--color-navy-deep);
+  background: var(--color-cream);
+  border-color: var(--color-cream);
+}
+
+.shareButton:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.shareButton:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ---------- QR ---------- */
+.qr {
+  width: 280px;
+  padding: var(--space-md);
+  background: rgba(15, 23, 36, 0.4);
+  border: 1px solid rgba(251, 246, 230, 0.12);
+  border-radius: var(--border-radius);
+}
+
+.qrDisclosure {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font: 600 15px/1 var(--font-family);
+  color: var(--color-cream);
+  background: transparent;
+  border: none;
+  padding: 4px 0;
+  cursor: pointer;
+}
+
+.qrDisclosure svg {
+  transition: transform var(--timing-fast) var(--ease-smooth);
+}
+
+.qrOpen .qrDisclosure svg {
+  transform: rotate(180deg);
+}
+
+.qrDisclosure:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- Toast ---------- */
+.toastRegion {
+  position: fixed;
+  bottom: var(--space-lg);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1100;
+  pointer-events: none;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  max-width: min(90vw, 420px);
+  padding: 13px var(--space-md);
+  font: 600 14px/1.4 var(--font-family);
+  color: var(--color-cream);
+  background: var(--color-navy-deep);
+  border: 1px solid rgba(110, 231, 183, 0.35);
+  border-radius: 999px;
+  box-shadow: var(--shadow-lg);
+}
+
+.toast svg {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .qr {
+    width: 100%;
+  }
+
+  .qrDisclosure {
+    display: flex;
+  }
+
+  .qrBody {
+    display: none;
+    padding-top: var(--space-md);
+  }
+
+  .qrOpen .qrBody {
+    display: block;
+  }
+}
+
+@media (max-width: 420px) {
+  .toggle {
+    display: flex;
+    width: 100%;
+  }
+
+  .toggleOption {
+    flex: 1;
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+
+  .shareButtons {
+    flex-direction: column;
+  }
+}

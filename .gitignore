@@ -19,6 +19,11 @@
 .DS_Store
 *.pem
 
+# app binaries - too large for git (GitHub rejects files over 100MB).
+# Host these on a GitHub Release or blob storage and point apkUrl in
+# lib/projects.js at that URL instead.
+/public/downloads/*.apk
+
 # debug
 npm-debug.log*
 yarn-debug.log*

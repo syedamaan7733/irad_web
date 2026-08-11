@@ -1,0 +1,83 @@
+.section {
+  margin-top: var(--space-3xl);
+  /* Keeps the heading clear of the fixed navbar when the modal jumps here. */
+  scroll-margin-top: 100px;
+}
+
+.heading {
+  font: var(--font-h4);
+  margin-bottom: var(--space-lg);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  list-style: none;
+  counter-reset: none;
+}
+
+.step {
+  display: flex;
+  gap: var(--space-sm);
+  padding-top: var(--space-md);
+  border-top: 2px solid var(--color-navy-deep);
+}
+
+.number {
+  flex-shrink: 0;
+  font: 700 15px/1 ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, monospace;
+  color: var(--color-navy-deep);
+  background: var(--color-accent);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.stepTitle {
+  font: var(--font-h6);
+  margin-bottom: var(--space-xs);
+}
+
+.stepBody {
+  font: var(--font-small);
+  color: rgba(15, 23, 36, 0.72);
+  margin: 0;
+}
+
+.assurance {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  margin: var(--space-xl) 0 0;
+  padding: var(--space-md);
+  font: var(--font-small);
+  color: rgba(15, 23, 36, 0.75);
+  background: rgba(110, 231, 183, 0.12);
+  border-radius: var(--border-radius-sm);
+}
+
+.assurance svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: #1f7a5c;
+}
+
+.code {
+  font-family: ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, monospace;
+  font-size: 13px;
+  padding: 2px 6px;
+  background: rgba(15, 23, 36, 0.08);
+  border-radius: 4px;
+  word-break: break-all;
+}
+
+@media (max-width: 900px) {
+  .steps {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}

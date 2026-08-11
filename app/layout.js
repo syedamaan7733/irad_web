@@ -8,6 +8,8 @@ const inter = Inter({
 });
 
 export const metadata = {
+  // Lets pages declare relative openGraph urls and still emit absolute ones.
+  metadataBase: new URL('https://irad.com'),
   title: 'iRad Solutions | Enterprise-Grade Digital Solutions',
   description: 'Building powerful digital solutions that transform businesses. From custom dashboards to lead generation systems, we create tech solutions that drive results.',
   keywords: ['web development', 'custom dashboards', 'internal tools', 'lead generation', 'enterprise solutions'],

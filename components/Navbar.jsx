@@ -2,9 +2,12 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import styles from './Navbar.module.css';
+
+const MotionLink = motion.create(Link);
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,11 +23,13 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Root-relative, so these still resolve from /projects and other subpages.
   const navLinks = [
-    { name: 'Services', href: '#services' },
-    { name: 'Solutions', href: '#solutions' },
-    { name: 'Case Studies', href: '#case-studies' },
-    { name: 'Pricing', href: '#pricing' },
+    { name: 'Services', href: '/#services' },
+    { name: 'Solutions', href: '/#solutions' },
+    { name: 'Projects', href: '/projects' },
+    { name: 'Case Studies', href: '/#case-studies' },
+    { name: 'Pricing', href: '/#pricing' },
   ];
 
   return (
@@ -54,7 +59,7 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <div className={styles.desktopNav}>
           {navLinks.map((link, index) => (
-            <motion.a
+            <MotionLink
               key={link.name}
               href={link.href}
               className={styles.navLink}
@@ -65,11 +70,11 @@ export default function Navbar() {
             >
               {link.name}
               <span className={styles.navUnderline}></span>
-            </motion.a>
+            </MotionLink>
           ))}
 
-          <motion.a
-            href="#contact"
+          <MotionLink
+            href="/#contact"
             className="btn btn-primary"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -78,7 +83,7 @@ export default function Navbar() {
             whileTap={{ scale: 0.98 }}
           >
             Request Demo
-          </motion.a>
+          </MotionLink>
         </div>
 
         {/* Mobile Menu Button */}
@@ -103,23 +108,23 @@ export default function Navbar() {
       >
         <div className={styles.mobileMenuContent}>
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
               href={link.href}
               className={styles.mobileNavLink}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.name}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#contact"
+          <Link
+            href="/#contact"
             className="btn btn-primary"
             style={{ width: '100%', marginTop: '16px' }}
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Request Demo
-          </a>
+          </Link>
         </div>
       </motion.div>
     </motion.nav>
