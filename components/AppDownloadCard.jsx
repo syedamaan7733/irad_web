@@ -35,7 +35,7 @@ export default function AppDownloadCard({ project }) {
   const [linkType, setLinkType] = useState('page');
   const [toast, setToast] = useState(null);
   const [modal, setModal] = useState(null);
-  const [isQrOpen, setIsQrOpen] = useState(false);
+  const [isQrOpen, setIsQrOpen] = useState(true);
 
   const urlInputRef = useRef(null);
   const autoDownloadFired = useRef(false);
@@ -182,9 +182,8 @@ export default function AppDownloadCard({ project }) {
                 <button
                   key={type.id}
                   type="button"
-                  className={`${styles.toggleOption} ${
-                    linkType === type.id ? styles.toggleOptionActive : ''
-                  }`}
+                  className={`${styles.toggleOption} ${linkType === type.id ? styles.toggleOptionActive : ''
+                    }`}
                   aria-pressed={linkType === type.id}
                   onClick={() => setLinkType(type.id)}
                 >
