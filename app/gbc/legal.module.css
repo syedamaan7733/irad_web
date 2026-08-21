@@ -1,0 +1,207 @@
+/* Shared styling for the GBC app legal documents (privacy policy, account
+   deletion). Both pages are long-form prose that people arrive at from a Google
+   Play listing, often on a phone, so the priority is a comfortable measure and
+   headings that survive scanning — not visual flourish. */
+
+.page {
+  /* Clears the fixed navbar. */
+  padding: calc(80px + var(--space-3xl)) 0 var(--space-4xl);
+  background: linear-gradient(180deg, #FBF6E6 0%, #F5EFD8 100%);
+  min-height: 100vh;
+}
+
+.doc {
+  max-width: 76ch;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font: 600 12px/1 var(--font-family);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(15, 23, 36, 0.55);
+  margin-bottom: var(--space-sm);
+}
+
+.title {
+  font: var(--font-h2);
+  color: var(--color-navy-deep);
+  margin-bottom: var(--space-sm);
+}
+
+.lede {
+  font: var(--font-body-large);
+  color: rgba(15, 23, 36, 0.75);
+  margin-bottom: var(--space-md);
+}
+
+.updated {
+  font: 400 14px/1.5 var(--font-family);
+  color: rgba(15, 23, 36, 0.55);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid rgba(15, 23, 36, 0.12);
+  margin-bottom: var(--space-xl);
+}
+
+.section {
+  margin-bottom: var(--space-xl);
+}
+
+.section h2 {
+  font: var(--font-h5);
+  color: var(--color-navy-deep);
+  margin-bottom: var(--space-sm);
+}
+
+.section h3 {
+  font: var(--font-h6);
+  color: var(--color-navy-deep);
+  margin: var(--space-md) 0 var(--space-xs);
+}
+
+.section p {
+  font: var(--font-body);
+  color: rgba(15, 23, 36, 0.8);
+  margin-bottom: var(--space-sm);
+}
+
+.section p:last-child {
+  margin-bottom: 0;
+}
+
+.section ul {
+  list-style: disc;
+  padding-left: 1.35em;
+  margin-bottom: var(--space-sm);
+}
+
+.section ol {
+  list-style: decimal;
+  padding-left: 1.35em;
+  margin-bottom: var(--space-sm);
+}
+
+.section li {
+  font: var(--font-body);
+  color: rgba(15, 23, 36, 0.8);
+  margin-bottom: var(--space-xs);
+}
+
+.section a {
+  color: #0F6E5C;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.section a:hover {
+  color: var(--color-navy-deep);
+}
+
+.section a:focus-visible {
+  outline: 2px solid var(--color-navy-deep);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* App identifiers and other literal values get a monospace setting, because
+   they are values to be matched exactly rather than prose. */
+.mono {
+  font-family: ui-monospace, 'Cascadia Mono', 'Consolas', monospace;
+  font-size: 0.92em;
+  background: rgba(15, 23, 36, 0.05);
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+
+.apps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.app {
+  background: #FFFFFF;
+  border: 1px solid rgba(15, 23, 36, 0.1);
+  border-radius: var(--border-radius-sm);
+  padding: var(--space-sm);
+}
+
+.app strong {
+  display: block;
+  font: 600 15px/1.4 var(--font-family);
+  color: var(--color-navy-deep);
+  margin-bottom: 4px;
+}
+
+.app span {
+  font-family: ui-monospace, 'Cascadia Mono', 'Consolas', monospace;
+  font-size: 12px;
+  color: rgba(15, 23, 36, 0.6);
+  word-break: break-all;
+}
+
+/* Wide content scrolls inside its own box so the page body never does. */
+.tableWrap {
+  overflow-x: auto;
+  border: 1px solid rgba(15, 23, 36, 0.12);
+  border-radius: var(--border-radius-sm);
+  background: #FFFFFF;
+  margin-bottom: var(--space-sm);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 520px;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(15, 23, 36, 0.08);
+  font: var(--font-small);
+  color: rgba(15, 23, 36, 0.8);
+  vertical-align: top;
+}
+
+.table th {
+  font-weight: 600;
+  color: var(--color-navy-deep);
+  background: rgba(15, 23, 36, 0.03);
+  white-space: nowrap;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.callout {
+  background: #FFFFFF;
+  border: 1px solid rgba(15, 23, 36, 0.12);
+  border-left: 3px solid var(--color-accent);
+  border-radius: var(--border-radius-sm);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.callout p:last-child {
+  margin-bottom: 0;
+}
+
+.contact {
+  font: var(--font-body);
+  color: rgba(15, 23, 36, 0.8);
+  line-height: 1.9;
+}
+
+.contact strong {
+  color: var(--color-navy-deep);
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: calc(72px + var(--space-xl)) 0 var(--space-3xl);
+  }
+}
